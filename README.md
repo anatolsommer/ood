@@ -1,6 +1,17 @@
 # ood
 Node.js process manager and reverse proxy
 
+## Goal
+An average sysadmin who is not familiar with node.js, should be able to install and maintain a working system that serves web pages or apps written in node.js, in a safe and reliable way. It should be possible to install, update or restart running applications within only a few seconds with zero downtime.
+
+## Roadmap
+```
+2016-01-18  initial release
+2016-01-25  https support (including LetsEncrypt)
+2016-02     first stable release
+2016-02     basic web administration interface
+```
+
 ## Concept
 ### ood brain (system service)
 * Runs as root so it can set UID for apps
