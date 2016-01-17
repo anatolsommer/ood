@@ -13,6 +13,39 @@ An average sysadmin who is not familiar with node.js, should be able to install 
 2016-02     basic web administration interface
 ```
 
+## CLI
+```
+
+  Usage: ood [command]
+
+  Commands:
+    init [options] <app>     Initialise a new app
+    start <app>              Start an app
+    stop <app>               Stop a running app
+    restart <app>            Restart a running app
+    scale <app> <instances>  Kill or fork new worker instances
+    status                   Show status of all apps
+    status [app]             Shows status of a running app
+    config [options]         Modify or show config
+    log                      Read log files
+    install                  Install and start ood system service
+    help [command]           Show help
+
+  Examples:
+    ood help status
+    ood help config
+    ood start testapp
+    ood stop example.com
+    ood status
+    ood config --get
+    ood config --get httpPort
+    ood config --set httpsPort 443
+    ood config --get --app example.com
+    ood config -a example.com -g port
+    ood config -a testapp -s cwd /home/test/testapp
+
+```
+
 ## Concept
 ### ood brain (system service)
 * Runs as root so it can set UID for apps
