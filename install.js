@@ -1,6 +1,7 @@
-var fs=require('fs'), exec=require('child_process').exec;
+var fs=require('fs'), mkdirp=require('mkdirp'), exec=require('child_process').exec,
+  destination='/etc/init.d/ood', template='ood-init.sh';
 
-fs.readFile(__dirname+'/templates/ood-init.sh', prepareTemplate);
+fs.readFile(__dirname+'/templates/'+template, prepareTemplate);
 
 function prepareTemplate(err, tmpl) {
   if (err) {
@@ -10,9 +11,9 @@ function prepareTemplate(err, tmpl) {
   tmpl=tmpl.toString()
     .replace(/%NODE%/g, process.execPath)
     .replace(/%OOD%/g, __dirname+'/service');
-  fs.writeFile('/etc/init.d/ood', tmpl, {mode:0755}, function(err) {
+  fs.writeFile(destination, tmpl, {mode:0755}, function(err) {
     if (err) {
-      console.error('Could not write /etc/init.d/ood');
+      console.error('Could not write '+destination);
       return;
     }
     installService();
@@ -24,6 +25,16 @@ function installService() {
   exec('update-rc.d ood defaults', function(err) {
     if (err) {
       console.error('Could not install service');
+      return;
+    }
+    createEtcOod();
+  });
+}
+
+function createEtcOod() {
+  mkdirp('/etc/ood', {mode:0750}, function(err) {
+    if (err) {
+      console.error('Could not create /etc/ood');
       return;
     }
     startService();
