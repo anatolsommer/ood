@@ -1,0 +1,31 @@
+{
+  "name": "ood",
+  "description": "Process manager and reverse proxy",
+  "version": "0.1.0-alpha",
+  "license": "MIT",
+  "author": "Anatol Sommer <anatol@anatol.at>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anatolsommer/ood.git"
+  },
+  "keywords": [
+    "process",
+    "manager",
+    "proxy"
+  ],
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "colors": "^1.1.2",
+    "commander": "^2.9.0",
+    "express": "^4.13.3",
+    "node.tail": "^0.0.4",
+    "request": "^2.67.0",
+    "usage": "^0.7.1",
+    "vinvocci": "^0.0.3",
+    "zocci": "^0.2.0",
+    "zygon": "^0.0.3"
+  },
+  "bin": {
+    "ood": "./cli.js"
+  }
+}
