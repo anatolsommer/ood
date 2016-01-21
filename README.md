@@ -8,7 +8,8 @@ An average sysadmin who is not familiar with node.js, should be able to install 
 ```
 2016-01-18 ✔ initial release (without proxy)
 2016-01-22 ☞ reverse proxy
-2016-01-25   https support (including LetsEncrypt)
+2016-01-25   redirects
+2016-01-29   https support (including LetsEncrypt)
 2016-02      first stable release
 2016-02      basic web administration interface
 ```
