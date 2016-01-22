@@ -1,7 +1,28 @@
-var fs=require('fs'), mkdirp=require('mkdirp'), exec=require('child_process').exec,
-  destination='/etc/init.d/ood', template='ood-init.sh';
+/*!
+ * ood
+ * Copyright(c) 2015-2016 Anatol Sommer <anatol@anatol.at>
+ * MIT Licensed
+ */
+/* globals require,console,__dirname,process */
+/* jshint strict:global */
 
-fs.readFile(__dirname+'/templates/'+template, prepareTemplate);
+'use strict';
+
+var fs=require('fs'), mkdirp=require('mkdirp'), pidof=require('pidof'),
+  exec=require('child_process').exec, type, destination, template;
+
+pidof('systemd', function(err, pid) {
+  if (pid) {
+    type='systemd';
+    destination='/etc/systemd/system/ood.service';
+    template='ood.service';
+  } else {
+    destination='/etc/init.d/ood';
+    template='ood-init.sh';
+  }
+
+  fs.readFile(__dirname+'/templates/'+template, prepareTemplate);
+});
 
 function prepareTemplate(err, tmpl) {
   if (err) {
@@ -11,7 +32,7 @@ function prepareTemplate(err, tmpl) {
   tmpl=tmpl.toString()
     .replace(/%NODE%/g, process.execPath)
     .replace(/%OOD%/g, __dirname+'/service');
-  fs.writeFile(destination, tmpl, {mode:0755}, function(err) {
+  fs.writeFile(destination, tmpl, {mode:493}, function(err) {
     if (err) {
       console.error('Could not write '+destination);
       return;
@@ -21,7 +42,7 @@ function prepareTemplate(err, tmpl) {
 }
 
 function createEtcOod() {
-  mkdirp('/etc/ood', {mode:0750}, function(err) {
+  mkdirp('/etc/ood', {mode:488}, function(err) {
     if (err) {
       console.error('Could not create /etc/ood');
       return;
@@ -31,7 +52,13 @@ function createEtcOod() {
 }
 
 function installService() {
-  exec('update-rc.d ood defaults', function(err) {
+  var cmd;
+  if (type==='systemd') {
+    cmd='systemctl enable ood.service';
+  } else {
+    cmd='update-rc.d ood defaults';
+  }
+  exec(cmd, function(err) {
     if (err) {
       console.error('Could not install service');
       return;
