@@ -1,3 +1,11 @@
+0.2.2-alpha / 2016-01-22
+========================
+
+  * improved install script
+  * updated dependencies
+  * small code improvements
+  * added tutorial
+
 0.2.1-alpha / 2016-01-22
 ========================
 

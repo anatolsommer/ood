@@ -16,17 +16,6 @@ function prepareTemplate(err, tmpl) {
       console.error('Could not write '+destination);
       return;
     }
-    installService();
-  });
-
-}
-
-function installService() {
-  exec('update-rc.d ood defaults', function(err) {
-    if (err) {
-      console.error('Could not install service');
-      return;
-    }
     createEtcOod();
   });
 }
@@ -35,6 +24,16 @@ function createEtcOod() {
   mkdirp('/etc/ood', {mode:0750}, function(err) {
     if (err) {
       console.error('Could not create /etc/ood');
+      return;
+    }
+    installService();
+  });
+}
+
+function installService() {
+  exec('update-rc.d ood defaults', function(err) {
+    if (err) {
+      console.error('Could not install service');
       return;
     }
     startService();
