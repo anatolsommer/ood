@@ -7,9 +7,10 @@ An average sysadmin who is not familiar with node.js, should be able to install 
 ## Roadmap
 ```
 2016-01-18 ✔ initial release (without proxy)
-2016-01-22 ☞ reverse proxy
-2016-01-25   redirects
-2016-01-29   https support (including LetsEncrypt)
+2016-01-22 ✔ reverse proxy
+2016-01-24 ☞ redirects
+2016-01-29   https support
+2016-01-31   autossl (Let's Encrypt)
 2016-02      first stable release
 2016-02      basic web administration interface
 ```
@@ -29,19 +30,21 @@ An average sysadmin who is not familiar with node.js, should be able to install 
     status [app]             Shows status of a running app
     config [options]         Modify or show config
     log                      Read log files
-    install                  Install and start ood system service
+    install                  Install and start system service
     help [command]           Show help
 
   Examples:
-    ood help status
+    ood help init
     ood help config
-    ood start testapp
-    ood stop example.com
+    ood init example.com --alias www.example.com
+    ood start example.com
+    ood stop testapp
     ood status
     ood config --get
     ood config --get httpPort
     ood config --set httpsPort 443
     ood config --get --app example.com
+    ood config -ga example.com
     ood config -a example.com -g port
     ood config -a testapp -s cwd /home/test/testapp
 
