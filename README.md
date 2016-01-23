@@ -1,8 +1,10 @@
 # ood
 Node.js process manager and reverse proxy
 
+
 ## Goal
 An average sysadmin who is not familiar with node.js, should be able to install and maintain a working system that serves web pages or apps written in node.js, in a safe and reliable way. It should be possible to install, update or restart running applications within only a few seconds with zero downtime.
+
 
 ## Roadmap
 ```
@@ -14,6 +16,24 @@ An average sysadmin who is not familiar with node.js, should be able to install 
 2016-02      first stable release
 2016-02      basic web administration interface
 ```
+
+
+## Installing ood
+```
+sudo npm install -g ood
+sudo ood install
+```
+
+### Allow specific users to run the ood command
+```
+sudo addgroup ood
+sudo chown -R root:ood /etc/ood
+sudo ood config --set gid ood
+sudo usermod -aG ood yourusername
+sudo usermod -aG ood anotherusername
+```
+The permission change will only apply to new sessions, so you will have to relog.
+
 
 ## CLI
 ```
@@ -49,6 +69,7 @@ An average sysadmin who is not familiar with node.js, should be able to install 
     ood config -a testapp -s cwd /home/test/testapp
 
 ```
+
 
 ## Concept
 ### ood brain (system service)

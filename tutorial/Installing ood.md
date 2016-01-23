@@ -7,18 +7,18 @@ curl https://nodejs.org/dist/v4.2.6/node-v4.2.6-linux-x64.tar.gz | sudo tar -C /
 
 ## Installing build-essential package (Debian/Ubuntu)
 ```
-apt-get update && apt-get install build-essential
+sudo apt-get update && sudo apt-get install build-essential
 ```
 
 ## Installing ood package and service
 ```
-npm install -g ood
-ood install
+sudo npm install -g ood
+sudo ood install
 ```
 
 ## Check if everything works
 ```
-root@test:~# ood log
+root@test:~# sudo ood log
 
   Time      Type   App              Message  
   19:05:32  INFO   ood-brain        Starting...  
@@ -26,7 +26,7 @@ root@test:~# ood log
   19:05:33  INFO   ood-api-server   Listening on port 4126  
   19:05:33  INFO   proxy            Starting...  
 ^C
-root@test:~# ood status
+root@test:~# sudo ood status
 
   App name          PID  Worker  State             Uptime      CPU        RAM  
   proxy            7672  MASTER  ok           0d 00:00:15    0.51%   15.35 MB  
@@ -37,3 +37,12 @@ root@test:~# ood status
 
 ```
 
+## Allow specific users to run the ood command
+```
+sudo addgroup ood
+sudo chown -R root:ood /etc/ood
+sudo ood config --set gid ood
+sudo usermod -aG ood yourusername
+sudo usermod -aG ood anotherusername
+```
+The permission change will only apply to new sessions, so you will have to relog.

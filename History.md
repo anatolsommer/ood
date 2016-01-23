@@ -1,3 +1,10 @@
+0.2.3-alpha / 2016-01-23
+========================
+
+  * improved documentation and tutorial
+  * improved install script (systemd)
+  * using teselecta for colored ood config
+
 0.2.2-alpha / 2016-01-22
 ========================
 
