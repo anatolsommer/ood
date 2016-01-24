@@ -10,8 +10,8 @@ An average sysadmin who is not familiar with node.js, should be able to install 
 ```
 2016-01-18 ✔ initial release (without proxy)
 2016-01-22 ✔ reverse proxy
-2016-01-24 ☞ redirects
-2016-01-29   https support
+2016-01-24 ✔ redirects
+2016-01-29 ☞ https support
 2016-01-31   autossl (Let's Encrypt)
 2016-02      first stable release
 2016-02      basic web administration interface
@@ -41,17 +41,18 @@ The permission change will only apply to new sessions, so you will have to relog
   Usage: ood [command]
 
   Commands:
-    init [options] <app>     Initialise a new app
-    start <app>              Start an app
-    stop <app>               Stop a running app
-    restart <app>            Restart a running app
-    scale <app> <instances>  Kill or fork new worker instances
-    status                   Show status of all apps
-    status [app]             Shows status of a running app
-    config [options]         Modify or show config
-    log                      Read log files
-    install                  Install and start system service
-    help [command]           Show help
+    init [options] <app>                Initialise a new app
+    start <app>                         Start an app
+    stop <app>                          Stop a running app
+    restart <app>                       Restart a running app
+    scale <app> <instances>             Kill or fork new worker instances
+    redirect [options] <host> [target]  Set http redirect for a hostname
+    status                              Show status of all apps
+    status [app]                        Show status of a running app
+    config [options]                    Modify or show config
+    log                                 Read log files
+    install                             Install and start system service
+    help [command]                      Show help
 
   Examples:
     ood help init
@@ -59,6 +60,9 @@ The permission change will only apply to new sessions, so you will have to relog
     ood init example.com --alias www.example.com
     ood start example.com
     ood stop testapp
+    ood redirect www.example.com https://example.com
+    ood redirect http://example.com https://example.com
+    ood redirect --delete www.example.com
     ood status
     ood config --get
     ood config --get httpPort
