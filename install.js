@@ -68,7 +68,13 @@ function installService() {
 }
 
 function startService() {
-  exec('/etc/init.d/ood start', function(err, stdout, stderr) {
+  var cmd;
+  if (type==='systemd') {
+    cmd='service ood start';
+  } else {
+    cmd='/etc/init.d/ood start';
+  }
+  exec(cmd, function(err, stdout, stderr) {
     if (err || stderr) {
       console.error('Could not start service\n'+stderr);
       return;
