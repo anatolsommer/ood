@@ -34,6 +34,13 @@ sudo usermod -aG ood anotherusername
 ```
 The permission change will only apply to new sessions, so you will have to relog.
 
+### Tested on:
+* Ubuntu 14.04
+* Ubuntu 15.04
+* Ubuntu 15.10
+* Debian 8.2
+* CentOS 7.2
+
 
 ## CLI
 ```

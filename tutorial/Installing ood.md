@@ -5,11 +5,6 @@
 curl https://nodejs.org/dist/v4.2.6/node-v4.2.6-linux-x64.tar.gz | sudo tar -C /usr/local --strip-components 1 -xzf -
 ```
 
-## Installing build-essential package (Debian/Ubuntu)
-```
-sudo apt-get update && sudo apt-get install build-essential
-```
-
 ## Installing ood package and service
 ```
 sudo npm install -g ood
@@ -46,3 +41,11 @@ sudo usermod -aG ood yourusername
 sudo usermod -aG ood anotherusername
 ```
 The permission change will only apply to new sessions, so you will have to relog.
+
+## Notes for specific operating systems
+### Debian
+You might have to intall curl to install node.js using the command above.
+```
+sudo apt-get update && sudo apt-get install curl
+```
+

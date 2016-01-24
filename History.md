@@ -1,3 +1,11 @@
+0.3.1-alpha / 2016-01-25
+========================
+
+  * no more binary dependencies
+  * manual garbage collection in appContainer
+  * adaptions for CentOS
+  * bugfixes
+
 0.3.0-alpha / 2016-01-24
 ========================
 
