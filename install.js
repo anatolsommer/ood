@@ -70,7 +70,7 @@ function installService() {
 function startService() {
   var cmd;
   if (type==='systemd') {
-    cmd='service ood start';
+    cmd='systemctl start ood';
   } else {
     cmd='/etc/init.d/ood start';
   }
