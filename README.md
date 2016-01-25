@@ -27,8 +27,8 @@ sudo ood install
 ### Allow specific users to run the ood command
 ```
 sudo addgroup ood
-sudo chown -R root:ood /etc/ood
 sudo ood config --set gid ood
+sudo chown -R root:ood /etc/ood
 sudo usermod -aG ood yourusername
 sudo usermod -aG ood anotherusername
 ```
