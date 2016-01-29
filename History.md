@@ -1,3 +1,11 @@
+0.4.0-alpha / 2016-01-29
+========================
+
+  * basic https support with SNI
+    * added ssl command
+    * added certMgr
+  * bugfixes and code improvements
+
 0.3.1-alpha / 2016-01-25
 ========================
 

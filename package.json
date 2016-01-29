@@ -1,7 +1,7 @@
 {
   "name": "ood",
   "description": "Process manager and reverse proxy",
-  "version": "0.3.1-alpha",
+  "version": "0.4.0-alpha",
   "license": "MIT",
   "author": "Anatol Sommer <anatol@anatol.at>",
   "repository": {
@@ -38,6 +38,7 @@
     "ood": "./cli.js"
   },
   "scripts": {
-    "jshint": "jshint --show-non-errors lib/* && echo 'No errors!\n' ; set $?=0"
+    "jshint": "jshint --show-non-errors lib/* && echo 'No errors!\n' ; set $?=0",
+    "todo": "grep -rnB 1 TODO lib/ *.js"
   }
 }
