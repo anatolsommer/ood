@@ -57,6 +57,7 @@ The permission change will only apply to new sessions, so you will have to relog
     status                              Show status of all apps
     status [app]                        Show status of a running app
     config [options]                    Modify or show config
+    ssl [options]                       Manage ssl settings, certs and keys
     log                                 Read log files
     install                             Install and start system service
     help [command]                      Show help
