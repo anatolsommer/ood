@@ -1,3 +1,12 @@
+0.4.1-alpha / 2016-01-31
+========================
+
+  * ssl --auto (Let's Encrypt)
+    * get free certificates
+    * multidomain (from alias)
+    * automatic renewal (14 days before expiration)
+  * bugfixes
+
 0.4.0-alpha / 2016-01-29
 ========================
 
