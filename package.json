@@ -20,15 +20,16 @@
     "commander": "^2.9.0",
     "express": "^4.13.3",
     "http-proxy": "^1.12.0",
+    "letiny": "^0.1.1",
     "mkdirp": "^0.5.1",
     "node-forge": "^0.6.38",
     "node.tail": "^0.0.4",
     "pidof": "^1.0.2",
     "pidusage": "^1.0.1",
     "request": "^2.67.0",
-    "teselecta": "0.0.4-beta",
+    "teselecta": "^0.1.0",
     "vinvocci": "^0.0.3",
-    "zocci": "^0.2.2",
+    "zocci": "^0.2.3",
     "zygon": "^0.0.4"
   },
   "devDependencies": {
