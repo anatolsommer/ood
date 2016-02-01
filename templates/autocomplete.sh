@@ -21,6 +21,10 @@ _ood ()
         COMPREPLY=( $( compgen -W "$(ood autocomplete app $special)" -- $cur ) );;
       config)
         COMPREPLY=( $( compgen -W '--help --app --get --set --delete -ga' -- $cur ) );;
+      ssl)
+        COMPREPLY=( $( compgen -W '--help --auto --email --agree --delete --delete-ca --list -l' -- $cur ) );;
+      help)
+        COMPREPLY=( $( compgen -W "$cmdstr" -- $cur ) );;
       --app|-ga)
         COMPREPLY=( $( compgen -W "$(ood autocomplete app)" -- $cur ) );;
     esac

@@ -80,5 +80,22 @@ function startService() {
       return;
     }
     console.log('Installation complete, service running.');
+    installAutocomplete();
   });
+}
+
+function installAutocomplete() {
+  var src=__dirname+'/templates/autocomplete.sh';
+  try  {
+    fs.createReadStream(src)
+      .pipe(fs.createWriteStream('/etc/bash_completion.d/ood'));
+  } catch(err) {
+    //TODO
+  }
+  try  {
+    fs.createReadStream(src)
+      .pipe(fs.createWriteStream('/usr/share/zsh/site-functions/ood'));
+  } catch(err) {
+    //TODO
+  }
 }
