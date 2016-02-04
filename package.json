@@ -27,7 +27,7 @@
     "pidof": "^1.0.2",
     "pidusage": "^1.0.1",
     "request": "^2.67.0",
-    "teselecta": "^0.1.0",
+    "teselecta": "^0.2.1",
     "vinvocci": "^0.0.3",
     "zocci": "^0.2.4",
     "zygon": "^0.0.4"
