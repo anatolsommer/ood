@@ -16,19 +16,20 @@ sudo ood install
 root@test:~# sudo ood log
 
   Time      Type   App              Message  
-  19:05:32  INFO   ood-brain        Starting...  
-  19:05:33  INFO   ood-api-server   Starting...  
-  19:05:33  INFO   ood-api-server   Listening on port 4126  
-  19:05:33  INFO   proxy            Starting...  
+  19:08:43  INFO   ood-brain        Starting...  
+  19:08:44  INFO   ood-api-server   Starting...  
+  19:08:44  INFO   ood-api-server   Listening on port 4126  
+  19:08:44  INFO   proxy            Starting...  
+  19:08:46  INFO   proxy            App successfully started!  
 ^C
 root@test:~# sudo ood status
 
-  App name          PID  Worker  State             Uptime      CPU        RAM  
-  proxy            7672  MASTER  ok           0d 00:00:15    0.51%   15.35 MB  
-                   7677      #1  listening    0d 00:00:15    0.64%   16.95 MB  
-                   7678      #2  listening    0d 00:00:15    0.64%   16.95 MB  
-                   7683      #3  listening    0d 00:00:15    0.58%   16.95 MB  
-                   7688      #4  listening    0d 00:00:15    0.58%   16.95 MB  
+  App name                 PID  Worker  State             Uptime     CPU        RAM  
+  proxy                   1619  MASTER  running      0d 00:00:04    1.2%   25.98 MB  
+                          1624      #1  listening    0d 00:00:04    0.0%   40.36 MB  
+                          1625      #2  listening    0d 00:00:04    0.0%   38.29 MB  
+                          1630      #3  listening    0d 00:00:04    0.0%   40.29 MB  
+                          1635      #4  listening    0d 00:00:04    0.0%   40.29 MB  
 
 ```
 

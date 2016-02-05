@@ -86,16 +86,10 @@ function startService() {
 
 function installAutocomplete() {
   var src=__dirname+'/templates/autocomplete.sh';
-  try  {
-    fs.createReadStream(src)
-      .pipe(fs.createWriteStream('/etc/bash_completion.d/ood'));
-  } catch(err) {
-    //TODO
-  }
-  try  {
-    fs.createReadStream(src)
-      .pipe(fs.createWriteStream('/usr/share/zsh/site-functions/ood'));
-  } catch(err) {
-    //TODO
-  }
+  fs.createReadStream(src)
+    .pipe(fs.createWriteStream('/etc/bash_completion.d/ood'))
+    .on('error', function() {});
+  fs.createReadStream(src)
+    .pipe(fs.createWriteStream('/usr/share/zsh/site-functions/ood'))
+    .on('error', function() {});
 }
