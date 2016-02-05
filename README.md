@@ -13,10 +13,11 @@ An average sysadmin who is not familiar with node.js, should be able to install 
 * Minimal configuration
 * Apps are easily scalable
 * Automatic load-balancing between workers
-* Optionally set UID, GID and ENV for each separate app
+* Optionally set UID, GID and env for each separate app
 * One CLI to rule them all
   * Make ood serving a new app with one single command
   * Restart apps with 0s downtime
+  * Autocomplete (with intelligent app name suggestions)
   * Show or change system or app configuration
   * Check the health of apps and workers
   * Read log files
@@ -45,7 +46,7 @@ An average sysadmin who is not familiar with node.js, should be able to install 
 2016-01-29 ✔ https support
 2016-01-31 ✔ ssl --auto (Let's Encrypt)
 2016-02-01 ✔ shell autocomplete
-2016-02-05   container states (handle constantly crashing apps)
+2016-02-05 ✔ container states (handle crashing apps)
 2016-02-07   logging for apps
 2016-02-08   monitoring sensors, load-balancing probe
 2016-02-12   api client

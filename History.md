@@ -1,3 +1,17 @@
+0.5.0-alpha / 2016-02-05
+========================
+
+  * CLI improvements
+    * autocomplete (with intelligent app name suggestions)
+    * better status output on start/restart/stop/scale
+    * starting apps on init
+	  * add http:// to redirect target if not present
+  * container state (starting, running, ...)
+    * handle crashing apps
+    * try resurrect crashed apps
+  * update proxy on alias change
+  * bugfixes
+
 0.4.1-alpha / 2016-01-31
 ========================
 
