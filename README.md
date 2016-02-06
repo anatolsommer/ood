@@ -18,6 +18,7 @@ An average sysadmin who is not familiar with node.js, should be able to install 
   * Make ood serving a new app with one single command
   * Restart apps with 0s downtime
   * Autocomplete (with intelligent app name suggestions)
+  * Allow specific users to run the ood command
   * Show or change system or app configuration
   * Check the health of apps and workers
   * Read log files
@@ -61,15 +62,9 @@ sudo npm install -g ood
 sudo ood install
 ```
 
-### Allow specific users to run the ood command
-```
-sudo addgroup ood
-sudo ood config --set gid ood
-sudo chown -R root:ood /etc/ood
-sudo usermod -aG ood yourusername
-sudo usermod -aG ood anotherusername
-```
-The new group will only apply to new sessions, so you will have to relog.
+## Tutorials
+* [Installing ood](https://github.com/anatolsommer/ood/blob/master/tutorial/Installing%20ood.md)
+* [Getting started](https://github.com/anatolsommer/ood/blob/master/tutorial/Getting%20started.md)
 
 
 ## CLI

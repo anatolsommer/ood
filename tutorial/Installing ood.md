@@ -13,7 +13,7 @@ sudo ood install
 
 ## Check if everything works
 ```
-root@test:~# sudo ood log
+root@tutorial:~# ood log
 
   Time      Type   App              Message  
   19:08:43  INFO   ood-brain        Starting...  
@@ -22,7 +22,7 @@ root@test:~# sudo ood log
   19:08:44  INFO   proxy            Starting...  
   19:08:46  INFO   proxy            App successfully started!  
 ^C
-root@test:~# sudo ood status
+root@tutorial:~# ood status
 
   App name                 PID  Worker  State             Uptime     CPU        RAM  
   proxy                   1619  MASTER  running      0d 00:00:04    1.2%   25.98 MB  
@@ -41,7 +41,7 @@ sudo chown -R root:ood /etc/ood
 sudo usermod -aG ood yourusername
 sudo usermod -aG ood anotherusername
 ```
-The permission change will only apply to new sessions, so you will have to relog.
+The new group will only apply to new sessions, so you will have to relog.
 
 ## Notes for specific operating systems
 ### Debian
