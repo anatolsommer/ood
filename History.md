@@ -5,10 +5,10 @@
     * autocomplete (with intelligent app name suggestions)
     * better status output on start/restart/stop/scale
     * starting apps on init
-	  * add http:// to redirect target if not present
+    * add http:// to redirect target if not present
   * container state (starting, running, ...)
     * handle crashing apps
-    * try resurrect crashed apps
+    * try to resurrect crashed apps
   * update proxy on alias change
   * bugfixes
 
@@ -60,7 +60,7 @@
   * improved install script
   * updated dependencies
   * small code improvements
-  * added tutorial
+  * added tutorial "Installing ood"
 
 0.2.1-alpha / 2016-01-22
 ========================
