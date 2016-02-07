@@ -1,3 +1,12 @@
+0.6.0-alpha / 2016-02-07
+========================
+
+  * logging for apps
+  * ood log --filter
+  * CLI refactoring
+  * code improvements
+  * added tutorial "Getting started"
+
 0.5.0-alpha / 2016-02-05
 ========================
 
