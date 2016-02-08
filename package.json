@@ -27,18 +27,22 @@
     "pidof": "^1.0.2",
     "pidusage": "^1.0.1",
     "request": "^2.67.0",
-    "teselecta": "^0.2.1",
+    "teselecta": "^0.2.2",
     "vinvocci": "^0.0.3",
     "zocci": "^0.2.4",
     "zygon": "^0.0.4"
   },
   "devDependencies": {
-    "jshint": "^2.9.1"
+    "jshint": "^2.9.1",
+    "mocha": "~2.1.0",
+    "istanbul": "^0.4.2"
   },
   "bin": {
     "ood": "./cli.js"
   },
   "scripts": {
+    "test": "mocha test",
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha test && istanbul report && istanbul report text-summary",
     "jshint": "jshint --show-non-errors lib/* && echo 'No errors!\n' ; set $?=0",
     "todo": "grep -rnB 1 TODO lib/ *.js"
   }
