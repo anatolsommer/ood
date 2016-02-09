@@ -28,13 +28,13 @@
     "pidusage": "^1.0.1",
     "request": "^2.67.0",
     "teselecta": "^0.2.2",
-    "vinvocci": "^0.0.3",
+    "vinvocci": "^0.0.4",
     "zocci": "^0.2.4",
-    "zygon": "^0.0.4"
+    "zygon": "^0.1.0"
   },
   "devDependencies": {
     "jshint": "^2.9.1",
-    "mocha": "~2.1.0",
+    "mocha": "^2.4.5",
     "istanbul": "^0.4.2"
   },
   "bin": {
