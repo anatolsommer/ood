@@ -1,32 +1,41 @@
 _ood ()
 {
-  local cur cmdp cmdstr special i
+  local cur cmdp cmdstr cmd arg i
 
   COMPREPLY=()
   cur=${COMP_WORDS[COMP_CWORD]}
-  cmdp='@(init|start|stop|restart|scale|redirect|status|config|ssl|log|help|--app|-ga)'
+  cmdp='@(init|start|stop|restart|scale|redirect|status|config|ssl|log|help)'
   cmdstr='init start stop restart scale redirect status config ssl log help'
+
 
   for (( i=0; i < ${#COMP_WORDS[@]}-1; i++ )); do
     if [[ ${COMP_WORDS[i]} == $cmdp ]]; then
-      special=${COMP_WORDS[i]}
+      cmd=${COMP_WORDS[i]}
+    fi
+    if [[ ${COMP_WORDS[i]} == -* ]]; then
+      arg=${COMP_WORDS[i]}
     fi
   done
 
-  if [ -n "$special" ]; then
-    case $special in
+  if [ -n "$cmd" ]; then
+    case $cmd in
       init)
         COMPREPLY=( $( compgen -W '--help --script --cwd --alias' -- $cur ) );;
       start|stop|restart|scale|status)
-        COMPREPLY=( $( compgen -W "$(ood autocomplete app $special)" -- $cur ) );;
+        COMPREPLY=( $( compgen -W "$(ood autocomplete app $cmd)" -- $cur ) );;
       config)
+        if [ -n "$arg" ] && [[ $cur != -* ]] ; then
+          case $arg in
+            --app|-ga)
+              COMPREPLY=( $( compgen -W "$(ood autocomplete app)" -- $cur ) );
+              return 0
+          esac
+        fi
         COMPREPLY=( $( compgen -W '--help --app --get --set --delete -ga' -- $cur ) );;
       ssl)
         COMPREPLY=( $( compgen -W '--help --auto --email --agree --delete --delete-ca --list -l' -- $cur ) );;
       help)
         COMPREPLY=( $( compgen -W "$cmdstr" -- $cur ) );;
-      --app|-ga)
-        COMPREPLY=( $( compgen -W "$(ood autocomplete app)" -- $cur ) );;
     esac
     return 0
   fi
@@ -37,8 +46,6 @@ _ood ()
     *)
       COMPREPLY=( $( compgen -W "$cmdstr" -- $cur ) );;
   esac
-
-  return 0
 }
 
 complete -F _ood ood
