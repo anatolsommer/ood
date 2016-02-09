@@ -52,7 +52,7 @@ An average sysadmin who is not familiar with node.js, should be able to install 
 2016-02-12   monitoring sensors, load-balancing probe
 2016-02-14   api client
 2016-02-21   first stable release
-2016-02      basic web administration interface
+2016-02-28   basic web administration interface
 ```
 
 
@@ -61,6 +61,7 @@ An average sysadmin who is not familiar with node.js, should be able to install 
 sudo npm install -g ood
 sudo ood install
 ```
+
 
 ## Tutorials
 * [Installing ood](https://github.com/anatolsommer/ood/blob/master/tutorial/Installing%20ood.md)
@@ -111,40 +112,9 @@ sudo ood install
 ```
 
 
-## Concept
-### ood brain (system service)
-* Runs as root so it can set UID for apps
-* Binds only to loopback interface
-* All child processes are dropping root privileges
-```
-child.fork -> appContainer 1 (master)
-  cluster.fork -> worker 1
-  cluster.fork -> worker 2
-  cluster.fork -> worker n
-child.fork -> appContainer 2 (master)
-  cluster.fork -> worker 1
-  cluster.fork -> worker n
+## Tests
+Run tests with `npm test` or generate coverage reports with `npm run test-cov`.
 
-child.fork -> proxy
 
-include api-server
-  http.listen
-```
-
-### ood cli
-```
-include api-client
-  http.post
-```
-
-`ood init example.com` add app to config and assign port
-
-`ood start example.com` start app (appContainer in cluster mode)
-
-`ood scale example.com 12` kill or spawn workers (send message to appContainer)
-
-`ood config --set httpPort 80`
-
-`ood config --get httpsPort`
-
-`ood config --app example.com --set cwd /var/www/example.com`
+## License
+#### MIT
