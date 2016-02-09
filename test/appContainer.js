@@ -142,7 +142,7 @@ describe('appContainer', function() {
 
   function forkContainer(done) {
     cont=fork(
-      '/usr/local/lib/node_modules/istanbul/lib/cli.js',
+      __dirname+'/../node_modules/istanbul/lib/cli.js',
       [
         'cover',
         __dirname+'/../lib/appContainer.js',
@@ -151,13 +151,13 @@ describe('appContainer', function() {
       ],
       {env:{OOD_TEST:true}, execArgv:['--expose-gc'], silent:true}
     );
-    setTimeout(function() {
+    wait4msg('log', function(msg) {
       cont.send({cmd:'status'});
-    }, 1800);
-    wait4msg('status', function(msg) {
-      assert(msg.status.master);
-      assert.equal(msg.status.workers.length, 0);
-      done();
+      wait4msg('status', function(msg) {
+        assert(msg.status.master);
+        assert.equal(msg.status.workers.length, 0);
+        done();
+      });
     });
   }
 
