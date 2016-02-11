@@ -28,16 +28,26 @@ _ood ()
           case $arg in
             --app|-ga)
               COMPREPLY=( $( compgen -W "$(ood autocomplete app)" -- $cur ) );
-              return 0
+              return 0;;
           esac
         fi
         COMPREPLY=( $( compgen -W '--help --app --get --set --delete -ga' -- $cur ) );;
       ssl)
+        if [ -n "$arg" ] && [[ $cur != -* ]] ; then
+          case $arg in
+            --delete-ca)
+              COMPREPLY=( $( compgen -W "$(ood autocomplete ssl ca)" -- $cur ) );
+              return 0;;
+            --delete)
+              COMPREPLY=( $( compgen -W "$(ood autocomplete ssl cert)" -- $cur ) );
+              return 0;;
+          esac
+        fi
         COMPREPLY=( $( compgen -W '--help --auto --email --agree --delete --delete-ca --list -l' -- $cur ) );;
       help)
         COMPREPLY=( $( compgen -W "$cmdstr" -- $cur ) );;
     esac
-    return 0
+    return 0;
   fi
 
   case "$cur" in
