@@ -1,6 +1,17 @@
+0.6.3-alpha / 2016-02-11
+========================
+
+  * improved CLI
+    * delete certificates
+    * delete CA certificates
+  * improved autocomplete
+    * source autocomplete using `. <(ood autocomplete)`
+    * suggest CN or CA hash for ssl --delete/--delete-ca
+
 0.6.2-alpha / 2016-02-09
 ========================
 
+  * improved autocomplete
   * fixed tests
   * updated dependencies
 

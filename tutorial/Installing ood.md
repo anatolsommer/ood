@@ -11,6 +11,13 @@ sudo npm install -g ood
 sudo ood install
 ```
 
+## Source autocomplete
+Autocomplete will be available in new sessions only, so you will have to relog or run:
+```
+. <(ood autocomplete)
+```
+This will source autocomplete to your current session.
+
 ## Check if everything works
 ```
 root@tutorial:~# ood log
@@ -41,7 +48,7 @@ sudo chown -R root:ood /etc/ood
 sudo usermod -aG ood yourusername
 sudo usermod -aG ood anotherusername
 ```
-The new group will only apply to new sessions, so you will have to relog.
+The new group will only apply to new sessions.
 
 ## Notes for specific operating systems
 ### Debian
