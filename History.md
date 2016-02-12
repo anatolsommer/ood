@@ -1,3 +1,10 @@
+0.6.4-alpha / 2016-02-12
+========================
+
+  * load-balancer probe
+  * monitoring sensor
+  * improved api
+
 0.6.3-alpha / 2016-02-11
 ========================
 

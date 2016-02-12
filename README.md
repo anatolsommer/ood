@@ -49,7 +49,7 @@ An average sysadmin who is not familiar with node.js, should be able to install 
 2016-02-01 ✔ shell autocomplete
 2016-02-05 ✔ container states (handle crashing apps)
 2016-02-07 ✔ logging for apps
-2016-02-12   monitoring sensors, load-balancing probe
+2016-02-12 ✔ monitoring sensors, load-balancing probe
 2016-02-14   api client
 2016-02-21   first stable release
 2016-02-28   basic web administration interface
