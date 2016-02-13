@@ -2,7 +2,7 @@
 
 ## Installing node
 ```
-curl https://nodejs.org/dist/v4.2.6/node-v4.2.6-linux-x64.tar.gz | sudo tar -C /usr/local --strip-components 1 -xzf -
+curl https://nodejs.org/dist/v4.3.0/node-v4.3.0-linux-x64.tar.gz | sudo tar -C /usr/local --strip-components 1 -xzf -
 ```
 
 ## Installing ood package and service
