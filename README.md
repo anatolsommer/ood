@@ -31,7 +31,10 @@ An average sysadmin who is not familiar with node.js, should be able to install 
     * Free certificates from letsencrypt.org
       * A single command and your work is done
       * Automatic renewal
-* Tested on
+* Extendable
+  * API
+  * Module system
+* Tested with node v0.12, v4.2, v4.3, v5.5 and v5.6 on
   * Ubuntu 14.04
   * Ubuntu 15.04
   * Ubuntu 15.10
@@ -50,9 +53,11 @@ An average sysadmin who is not familiar with node.js, should be able to install 
 2016-02-05 ✔ container states (handle crashing apps)
 2016-02-07 ✔ logging for apps
 2016-02-12 ✔ monitoring sensors, load-balancing probe
-2016-02-14   api client
+2016-02-14 ✔ api client, module system
+2016-02-16   wildcard certificate support
+2016-02-18   access logs
 2016-02-21   first stable release
-2016-02-28   basic web administration interface
+2016-02-28   basic web administration interface (module)
 ```
 
 
@@ -82,9 +87,10 @@ sudo ood install
     redirect [options] <host> [target]  Set http redirect for a hostname
     status                              Show status of all apps
     status [app]                        Show status of a running app
-    config [options]                    Modify or show config
+    config [options]                    Modify or show configuration
     ssl [options]                       Manage ssl certificates and keys
-    log                                 Read log files
+    log [options]                       Read log files
+    mod [options]                       Manage ood modules
     install                             Install and start system service
     help [command]                      Show help
   
@@ -93,6 +99,7 @@ sudo ood install
     ood help config
     ood init example.com --alias www.example.com
     ood start example.com
+    ood scale example.com 4
     ood stop testapp
     ood status
     ood redirect www.example.com https://example.com

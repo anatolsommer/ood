@@ -1,9 +1,20 @@
+0.7.0-beta / 2016-02-14
+=======================
+
+  * module system
+    * added `ood mod` command
+    * moved load-balancer probe to "ood-loadbalancer"
+    * moved monitoring sensor to "ood-monitoring"
+  * completed API client
+  * reusing ports
+  * bugfixes
+
 0.6.4-alpha / 2016-02-12
 ========================
 
   * load-balancer probe
   * monitoring sensor
-  * improved api
+  * improved API
 
 0.6.3-alpha / 2016-02-11
 ========================

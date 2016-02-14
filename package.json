@@ -1,7 +1,7 @@
 {
   "name": "ood",
   "description": "Process manager and reverse proxy",
-  "version": "0.6.4-alpha",
+  "version": "0.7.0-beta",
   "license": "MIT",
   "author": "Anatol Sommer <anatol@anatol.at>",
   "repository": {
@@ -37,6 +37,8 @@
     "mocha": "^2.4.5",
     "istanbul": "^0.4.2"
   },
+  "engines": { "node": ">=0.12" },
+  "preferGlobal": true,
   "bin": {
     "ood": "./cli.js"
   },
