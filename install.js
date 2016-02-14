@@ -3,8 +3,6 @@
  * Copyright(c) 2015-2016 Anatol Sommer <anatol@anatol.at>
  * MIT Licensed
  */
-/* globals require,console,__dirname,process */
-/* jshint strict:global */
 
 'use strict';
 
