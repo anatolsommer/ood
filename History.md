@@ -1,3 +1,9 @@
+0.7.1-beta / 2016-02-17
+=======================
+
+  * wildcard certificate support
+  * bugfixing (cert chain)
+
 0.7.0-beta / 2016-02-14
 =======================
 
