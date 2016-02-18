@@ -1,7 +1,14 @@
+0.7.3-beta / 2016-02-18
+=======================
+
+  * improved logging
+  * access logs for apps and modules
+  * load modules without proxy restart
+
 0.7.2-beta / 2016-02-17
 =======================
 
-  * bugfixing
+  * bugfixes
 
 0.7.1-beta / 2016-02-17
 =======================
