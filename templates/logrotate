@@ -1,0 +1,21 @@
+%LOGDIR%/*.log {
+  rotate 16
+  weekly
+  missingok
+  notifempty
+  compress
+  delaycompress
+  postrotate
+    /bin/kill -USR2 `pidof 'ood service'`
+  endscript
+}
+
+/var/log/ood.log {
+  rotate 4
+  monthly
+  missingok
+  notifempty
+  compress
+  delaycompress
+  create 0640 root root
+}
