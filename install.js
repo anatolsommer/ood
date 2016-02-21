@@ -147,7 +147,7 @@ exports.install=function(opts) {
         if (err) {
           return done(err);
         }
-        data=data.toString().replace('%LOGDIR%', opts.logDir || '/var/log/node').
+        data=data.toString().replace('%LOGDIR%', opts.logDir || '/var/log/node');
         fs.writeFile('/etc/logrotate.d/ood', data, function(err) {
           process.stdout.write(err ? 'failed, skipping.' : 'ok!');
           done();
