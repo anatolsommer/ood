@@ -18,7 +18,6 @@
 
 NAME=ood
 PIDFILE=/var/run/ood.pid
-LOGFILE=/var/log/ood.log
 
 if [ $(id -u) != "0" ];
 then
@@ -33,7 +32,7 @@ start() {
        echo "$NAME already running"
        exit 1
     else
-      %NODE% %OOD% &>> $LOGFILE & echo $! > $PIDFILE
+      %NODE% %OOD% & echo $! > $PIDFILE
       RETVAL=$?
     fi
 }

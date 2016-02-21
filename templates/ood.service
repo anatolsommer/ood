@@ -3,7 +3,7 @@ Description=ood process manager
 After=network.target
 
 [Service]
-ExecStart=/bin/sh -c '%NODE% %OOD% >> /var/log/ood.log 2>&1'
+ExecStart=%NODE% %OOD%
 
 [Install]
 WantedBy=multi-user.target
