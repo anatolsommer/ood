@@ -1,3 +1,10 @@
+1.0.0-rc1 / 2016-02-21
+======================
+
+  * logrotate
+  * improved logging
+  * improved installer
+
 0.7.4-beta / 2016-02-19
 =======================
 

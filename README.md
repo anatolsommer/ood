@@ -57,7 +57,7 @@ An average sysadmin who is not familiar with node.js, should be able to install 
 2016-02-14 ✔ api client, module system
 2016-02-16 ✔ wildcard certificate support
 2016-02-18 ✔ access logs
-2016-02-21   first stable release
+2016-02-21 ✔ first stable release candidate
 2016-02-28   basic web administration interface (module)
 ```
 
