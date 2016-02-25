@@ -52,6 +52,7 @@ describe('appContainer', function() {
 
   it('should restart an app', function(done) {
     cont.send({cmd:'restart'});
+    cont.send({cmd:'restart'});
     wait4log('Restarting...', function() {
       wait4log('Restart was successful!', function() {
         done();
@@ -130,6 +131,7 @@ describe('appContainer', function() {
   });
 
   it('should stop the second app', function(done) {
+    cont.send({cmd:'stop'});
     cont.send({cmd:'stop'});
     cont.on('exit', function() {
       done();

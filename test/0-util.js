@@ -9,7 +9,7 @@ describe('util', function() {
   describe('logger', function() {
 
     it('should export logger', function() {
-      assert(util.logger);
+      assert.equal(typeof util.logger, 'function');
     });
 
     it('should return logger', function() {
@@ -39,8 +39,8 @@ describe('util', function() {
       assert(util.logger);
     });
 
-    it('should return logReader and read file', function() {
-      logReader=util.logReader(__filename, function(l) {
+    it('should return logReader and read file', function(done) {
+      logReader=util.logReader(__dirname+'/log/log.json', function(l) {
         assert.equal(l.type, 'INFO');
         if (l.msg==='TEST2') {
           done();
@@ -48,10 +48,10 @@ describe('util', function() {
       });
     });
 
-    it('should return logReader and read a line', function() {
-      logReader=util.logReader(__filename, {lines:1}, function(l) {
+    it('should return logReader and read a line', function(done) {
+      logReader=util.logReader(__dirname+'/log/log.json', {lines:1}, function(l) {
         assert.equal(l.type, 'INFO');
-        assert.equal(l.msg, 'TEST1');
+        assert.equal(l.msg, 'TEST2');
         done();
       });
     });

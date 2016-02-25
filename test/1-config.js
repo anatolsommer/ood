@@ -2,6 +2,12 @@ var assert=require('assert'), config;
 
 describe('config', function() {
 
+  before(function() {
+    try {
+      require('fs').unlinkSync(__dirname+'/etc_ood/config.json');
+    } catch(err) {}
+  });
+
   it('should require config', function() {
     process.env.OOD_DIR=__dirname+'/etc_ood';
     config=require(__dirname+'/../lib/config.js');
@@ -35,7 +41,7 @@ describe('config', function() {
       assert.equal(config.get('logLevel'), 'INFO');
     });
 
-    it('should set new ports', function() {
+    it('should set new ports and logDir', function() {
       config.set('oodPort', 1111);
       config.set('httpPort', 1080);
       config.set('httpsPort', 1443);
@@ -43,7 +49,7 @@ describe('config', function() {
     });
 
     it('should have saved values to config.json', function(done) {
-      config.save(function() {
+      config.set('logDir', __dirname+'/log', function() {
         var json=require(__dirname+'/etc_ood/config.json');
         assert.equal(json.serverID, id);
         assert.equal(json.secret, secret);
@@ -51,6 +57,7 @@ describe('config', function() {
         assert.equal(json.httpPort, 1080);
         assert.equal(json.httpsPort, 1443);
         assert.equal(json.startPort, 1100);
+        assert.equal(json.logDir, __dirname+'/log');
         done();
       });
     });
