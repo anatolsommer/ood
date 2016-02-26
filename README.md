@@ -69,12 +69,13 @@ An average sysadmin who is not familiar with node.js, should be able to install 
   * Root permission / drop privileges
   * Official modules (whitelist)
   * Install routines for modules
-  * util.propmt
+  * util.prompt
 * Autorestart on memory usage or uptime
 * Modules
   * Web administration interface
   * Improve ood-monitoring
   * Watch files and restart app on change
+* PKCS#12 support (.pfx)
 
 
 ## Installing ood
