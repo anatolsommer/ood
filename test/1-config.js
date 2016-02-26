@@ -41,14 +41,15 @@ describe('config', function() {
       assert.equal(config.get('logLevel'), 'INFO');
     });
 
-    it('should set new ports and logDir', function() {
+    it('should set new ports and logLevel', function() {
       config.set('oodPort', 1111);
       config.set('httpPort', 1080);
       config.set('httpsPort', 1443);
       config.set('startPort', 1100);
+      config.set('logLevel', 'DEBUG');
     });
 
-    it('should have saved values to config.json', function(done) {
+    it('should set logDir and save values to config.json', function(done) {
       config.set('logDir', __dirname+'/log', function() {
         var json=require(__dirname+'/etc_ood/config.json');
         assert.equal(json.serverID, id);
