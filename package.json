@@ -1,7 +1,7 @@
 {
   "name": "ood",
   "description": "Process manager and reverse proxy",
-  "version": "1.0.0-rc3",
+  "version": "1.0.0",
   "license": "MIT",
   "author": "Anatol Sommer <anatol@anatol.at>",
   "repository": {
