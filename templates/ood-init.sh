@@ -32,7 +32,7 @@ start() {
        echo "$NAME already running"
        exit 1
     else
-      %NODE% %OOD% & echo $! > $PIDFILE
+      %NODE% %OOD% &>> /dev/null & echo $! > $PIDFILE
       RETVAL=$?
     fi
 }
