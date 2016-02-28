@@ -59,7 +59,7 @@ An average sysadmin who is not familiar with node.js, should be able to install 
 2016-02-18 ✔ access logs
 2016-02-21 ✔ first stable release candidate
 2016-02-27 ✔ v1.0.0 (stable)
-2016-02-28   basic web administration interface (module)
+2016-03-06   basic web administration interface (module)
 ```
 
 ### Next steps
