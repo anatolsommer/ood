@@ -76,6 +76,7 @@ An average sysadmin who is not familiar with node.js, should be able to install 
   * Improve ood-monitoring
   * Watch files and restart app on change
 * PKCS#12 support (.pfx)
+* Websocket support
 
 
 ## Installing ood
