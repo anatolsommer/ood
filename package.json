@@ -14,28 +14,28 @@
     "proxy"
   ],
   "dependencies": {
-    "async": "1.5.2",
-    "body-parser": "1.15.0",
-    "colors": "1.1.2",
-    "commander": "2.9.0",
-    "express": "4.13.4",
-    "http-proxy": "1.13.2",
-    "letiny": "0.1.1",
-    "mkdirp": "0.5.1",
-    "node-forge": "0.6.39",
-    "pidof": "1.0.2",
-    "pidusage": "1.0.1",
-    "request": "2.69.0",
-    "gelth": "0.0.2",
-    "teselecta": "0.2.2",
-    "vinvocci": "0.0.4",
-    "zocci": "0.2.4",
-    "zygon": "0.1.0"
+    "async": "^2.0.1",
+    "body-parser": "^1.15.2",
+    "colors": "^1.1.2",
+    "commander": "^2.9.0",
+    "express": "^4.14.0",
+    "http-proxy": "^1.14.0",
+    "letiny": "^0.1.1",
+    "mkdirp": "^0.5.1",
+    "node-forge": "^0.6.42",
+    "pidof": "^1.0.2",
+    "pidusage": "^1.0.4",
+    "request": "^2.74.0",
+    "gelth": "^0.0.2",
+    "teselecta": "^0.2.2",
+    "vinvocci": "^0.0.4",
+    "zocci": "^0.2.4",
+    "zygon": "^0.1.0"
   },
   "devDependencies": {
-    "jshint": "^2.9.1",
-    "mocha": "^2.4.5",
-    "istanbul": "^0.4.2"
+    "jshint": "^2.9.2",
+    "mocha": "^3.0.2",
+    "istanbul": "^0.4.4"
   },
   "engines": {
     "node": ">=0.12"
